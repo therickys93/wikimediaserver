@@ -5,6 +5,8 @@ const app = express()
 const port = 3000
 const directory = "/mediaserver"
 
+app.use(express.static(directory))
+
 app.get('/', function (req, res) {
 	console.log("GET /")
 	var response = {"success":true}
