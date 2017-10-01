@@ -2,7 +2,8 @@ const express = require('express')
 var fs = require('fs')
 const app = express()
 
-const port = 3000;
+const port = 3000
+const directory = "/mediaserver"
 
 app.get('/', function (req, res) {
 	console.log("GET /")
@@ -13,7 +14,7 @@ app.get('/', function (req, res) {
 
 app.get('/files', function(req, res){
 	console.log("GET /files")
-	fs.readdir(__dirname, function(err, items) {
+	fs.readdir(directory, function(err, items) {
 	    console.log(items)
 		res.json(items)
 	})
@@ -22,7 +23,7 @@ app.get('/files', function(req, res){
 app.get('/search/:name', function(req, res){
 	console.log("GET /search/:name")
 	var name = req.params.name
-	fs.readdir(__dirname, function(err, items){
+	fs.readdir(directory, function(err, items){
 		items = items.filter(function(e, i){
 			return items[i].indexOf(name) !== -1
 		})
