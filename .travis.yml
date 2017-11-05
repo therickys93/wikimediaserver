@@ -8,3 +8,12 @@ after_success:
 - if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
   docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"; docker push therickys93/wikimediaserver;
   fi
+deploy:
+  provider: releases
+  file_glob: "true"
+  skip_cleanup: true
+  api_key:
+    secure: crK+hMTREUqaKfz8p0Miu9coKVc0hDcWkrwfHfxdsR+T+v/4pvYzawOZ+xGdj9SOCO8K2/GHY4FyO4jw30mfMVvUp5kFYFqEf+ibJG7n9QSuFb1wK21H6wLdul2zNiasf7GBsc7gFHsu1ohfhAOR/5zz1sv3Abz34IekZ2+3iklXhw/+eqKq4kmAQR8FEZ/T6d/6IeeJ+VuahMnpxmcBiPQ535y3xt2H8Qqhcc1qil9K4h5K3sTqAnZeRHXTH8jbvTuR4T9KQINnvgfIIbenusPGDJwB4yXE3azHH6iludyPwDXnZxWH1QyKmXQJF+qo8lfZvTA6gqelR8aDwwUdqYhrcB+5B5ggrVEifMhKK3mncG7DaI2HrNHz+Q0pJrdbNJCadEDKLtnGUKduyg3BqzEy4gDKNdV4P2tO+fKLmYMiuLlqHfllLVS9q+wXJkQYugK8ZyRwkY7y3Jlj/HaoQKJKKiuZ5Uag/L3sK/VzoLtEyE+EuefucC5mKIZrjnpP4EwxQFPvEDpi2h1TTwtW9cPqosnyXuXr/7hMlORdnrC4GZxBkgZsJwlkvyWJkWiLNbO/f5UjnXMr5T4UTVs5BWfFTrz4JuUetz+9XjK12Enfr2TskB0MmniiGOl+8czujhM68V5LJMEegYpHf6iNdKXwak0ZR2a+N+bhrSyNbfA=
+  on:
+    repo: therickys93/wikimediaserver
+    branch: master
