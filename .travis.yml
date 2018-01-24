@@ -3,6 +3,8 @@ sudo: required
 services:
 - docker
 script:
+- npm install
+- npm test
 - docker build -t therickys93/wikimediaserver .
 after_success:
 - if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
