@@ -4,6 +4,7 @@ services:
 - docker
 script:
 - npm install
+- ./node_modules/bower/bin/bower install jquery bootstrap
 - npm test
 - docker build -t therickys93/wikimediaserver .
 after_success:

@@ -11,6 +11,7 @@
   "author": "Riccardo Crippa",
   "license": "ISC",
   "dependencies": {
+    "bower": "^1.8.2",
     "express": "^4.16.1",
     "mocha": "^4.0.1",
     "pug": "^2.0.0-rc.4"
