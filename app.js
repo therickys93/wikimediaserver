@@ -7,6 +7,7 @@ const port = 3000
 const directory = "./mediaserver"
 
 app.use(express.static(path.join(__dirname, directory)))
+app.use(express.static(path.join(__dirname, "./bower_components")))
 app.set('views', './views')
 app.set('view engine', 'pug')
 

@@ -1,11 +1,20 @@
+doctype html
 html
 	head
 		title= title
-	body
-		h1 Wiki Media Server
-		table
-			for item in files
+		link(rel='stylesheet', href='bootstrap/dist/css/bootstrap.min.css')
+	body(style="padding-top: 40px;")
+		h1(align="center") Wiki Media Server
+		br
+		div(class="container")
+			table(class="table table-bordered table-striped")
 				tr
-					td= item
-					td
-						a(href='/'+item) Riproduci 
+					th Film
+					th Azione
+				for item in files
+					tr
+						td= item
+						td
+							a(href='/'+item) Riproduci
+		script(src='jquery/dist/jquery.min.js')
+		script(src='bootstrap/dist/js/bootstrap.min.js')
