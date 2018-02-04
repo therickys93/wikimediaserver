@@ -1,7 +1,7 @@
 {
   "name": "wikimediaserver",
   "version": "1.0.0",
-  "description": "Simple Media Server",
+  "description": "Wiki Media Server",
   "main": "app.js",
   "repository": "https://github.com/therickys93/wikimediaserver.git",
   "scripts": {
@@ -9,8 +9,9 @@
     "test": "mocha"
   },
   "author": "Riccardo Crippa",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
+    "bower": "^1.8.2",
     "express": "^4.16.1",
     "mocha": "^4.0.1",
     "pug": "^2.0.0-rc.4"

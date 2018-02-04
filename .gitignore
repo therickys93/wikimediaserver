@@ -1,3 +1,4 @@
 prova/
 node_modules/
-mediaserver/
+.vscode/
+bower_components/

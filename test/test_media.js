@@ -1,8 +1,6 @@
 var assert = require('assert');
 var Media = require('../model/media');
 
-// amici_di_letto.mp4
-
 describe('Media', function() {
   describe('test contructor', function() {
     it('contructor without parameter', function() {
