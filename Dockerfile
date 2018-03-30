@@ -5,6 +5,8 @@ EXPOSE 3000
 ADD . /app
 WORKDIR /app
 VOLUME /mediaserver
+# git submodules reference fix
+ENV GIT_DIR=/app
 RUN npm install
 RUN ./node_modules/bower/bin/bower install jquery bootstrap --allow-root
 CMD ["npm", "start"]
