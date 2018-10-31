@@ -12,10 +12,14 @@ html
 				tr
 					th Film
 					th Azione
-				for item in files
+				if files
+					for item in files
+						tr
+							td= item
+							td
+								a(href='/'+item) Riproduci
+				else
 					tr
-						td= item
-						td
-							a(href='/'+item) Riproduci
+						td(colspan="2", align="center") Nessun elemento trovato
 		script(src='jquery/dist/jquery.min.js')
 		script(src='bootstrap/dist/js/bootstrap.min.js')

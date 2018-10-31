@@ -4,7 +4,7 @@ RUN apk add nodejs nodejs-npm git
 EXPOSE 3000
 ADD . /app
 WORKDIR /app
-VOLUME /mediaserver
+VOLUME /app/mediaserver
 # git submodules reference fix
 ENV GIT_DIR=/app
 RUN npm install
