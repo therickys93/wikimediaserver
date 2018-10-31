@@ -13,11 +13,15 @@ html
 					th Film
 					th Azione
 				if files
-					for item in files
+					if files.length > 0
+						for item in files
+							tr
+								td= item
+								td
+									a(href='/'+item) Riproduci
+					else
 						tr
-							td= item
-							td
-								a(href='/'+item) Riproduci
+							td(colspan="2", align="center") Nessun elemento trovato
 				else
 					tr
 						td(colspan="2", align="center") Nessun elemento trovato
