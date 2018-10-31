@@ -1,9 +1,8 @@
-const express = require('express')
-var fs = require('fs')
-var path = require('path')
-const app = express()
-
-const port = 3000
+const express   = require('express')
+var fs          = require('fs')
+var path        = require('path')
+const app       = express()
+const port      = 3000
 const directory = "./mediaserver"
 
 app.use(express.static(path.join(__dirname, directory)))
@@ -31,8 +30,16 @@ app.get('/files', function(req, res){
 	})
 })
 
-app.get('/search/:name', function(req, res){
-	console.log("GET /search/:name")
+app.get('/api/files', function(req, res){
+	console.log("GET /api/files")
+	fs.readdir(directory, function(err, items){
+		console.log(items)
+		res.json(items)
+	})
+})
+
+app.get('/api/search/:name', function(req, res){
+	console.log("GET /api/search/:name")
 	var name = req.params.name
 	fs.readdir(directory, function(err, items){
 		items = items.filter(function(e, i){
