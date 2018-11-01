@@ -1,1 +1,4 @@
 mediaserver/
+node_modules/
+.vscode/
+bower_components/
